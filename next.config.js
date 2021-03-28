@@ -4,4 +4,5 @@ module.exports = {
     config.externals['styletron-server'] = 'styletron-server';
     return config;
   },
+  distDir: 'build'
 };
