@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  height:100%;
+}
+
+.base-layout {
+  grid-template-columns: 1fr 3fr;
+  height: 100vh;
+  display: grid;
+}
+
+.base-layout__navigation {
+  background-color: white;
+}

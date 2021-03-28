@@ -1,27 +1,21 @@
-// DOCUMENTATION: http://styletron.org
+import { styled, useStyletron } from 'styletron-react';
+import ReactFlow from 'react-flow-renderer';
+import { BaseLayout } from '../src/layouts';
+import { default as Menu } from '../src/components/sidebar';
 
-import { styled, useStyletron } from 'styletron-react'
-
-// statically styled component
-const Title = styled('h1', {
-  color: 'red',
-  fontSize: '82px',
-})
-
-// dynamically styled component
-const SubTitle = styled('h2', ({ $size }) => ({
-  color: 'blue',
-  fontSize: `${$size}px`,
-}))
+const elements = [
+  { id: '1', data: { label: 'Node 1' }, position: { x: 250, y: 5 } },
+  { id: '2', data: { label: <div>Node 2</div> }, position: { x: 100, y: 100 } },
+  {
+    id: 'e1-2', source: '1', target: '2', animated: true,
+  },
+];
 
 export default function Home() {
-  // an alternative hook based API
-  const [css] = useStyletron()
   return (
-    <div>
-      <Title>Title</Title>
-      <SubTitle $size={50}>Subtitle</SubTitle>
-      <p className={css({ fontSize: '32px' })}>Styled by hook</p>
-    </div>
-  )
+    <BaseLayout
+      Navigation={<Menu />}
+      Content={<ReactFlow elements={elements} />}
+    />
+  );
 }

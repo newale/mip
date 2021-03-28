@@ -3,15 +3,28 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
+    "lint": "eslint . --fix",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "baseui": "^9.111.2",
     "next": "latest",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-flow-renderer": "^9.3.1",
     "styletron-engine-atomic": "1.4.6",
     "styletron-react": "5.2.7"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "typescript": "^4.2.3"
+  }
 }

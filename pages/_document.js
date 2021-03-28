@@ -1,24 +1,25 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { Provider as StyletronProvider } from 'styletron-react'
-import { styletron } from '../styletron'
+import Document, {
+  Html, Head, Main, NextScript,
+} from 'next/document';
+import { Provider as StyletronProvider } from 'styletron-react';
+import { styletron } from '../styletron';
 
 class MyDocument extends Document {
   static async getInitialProps(context) {
-    const renderPage = () =>
-      context.renderPage({
-        enhanceApp: (App) => (props) => (
-          <StyletronProvider value={styletron}>
-            <App {...props} />
-          </StyletronProvider>
-        ),
-      })
+    const renderPage = () => context.renderPage({
+      enhanceApp: (App) => (props) => (
+        <StyletronProvider value={styletron}>
+          <App {...props} />
+        </StyletronProvider>
+      ),
+    });
 
     const initialProps = await Document.getInitialProps({
       ...context,
       renderPage,
-    })
-    const stylesheets = styletron.getStylesheets() || []
-    return { ...initialProps, stylesheets }
+    });
+    const stylesheets = styletron.getStylesheets() || [];
+    return { ...initialProps, stylesheets };
   }
 
   render() {
@@ -40,8 +41,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;
