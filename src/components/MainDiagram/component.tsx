@@ -1,12 +1,18 @@
 import React from 'react';
-import ReactFlow, { Elements } from 'react-flow-renderer';
+import ReactFlow, { Background, BackgroundVariant, Elements } from 'react-flow-renderer';
 
 type MainDiagramProps = {
-  diagrams: Elements
+  diagram: Elements
 }
 
-const MainDiagram = ({diagrams}: MainDiagramProps) => (
-  <ReactFlow elements={[]} />
+const MainDiagram = ({diagram}: MainDiagramProps) => (
+  <ReactFlow elements={diagram}>
+    <Background
+      variant={BackgroundVariant.Dots}
+      gap={24}
+      size={1}
+    />
+  </ReactFlow>
 )
 
 export default MainDiagram;
