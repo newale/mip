@@ -1,4 +1,4 @@
-import react, { ReactElement } from 'react';
+import react, {ReactElement} from 'react';
 
 type BaseLayoutProps = {
   Navigation: ReactElement,
