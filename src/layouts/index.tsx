@@ -2,7 +2,7 @@ import react, {ReactElement} from 'react';
 
 type BaseLayoutProps = {
   Navigation: ReactElement,
-  Content: ReactElement,
+  Content?: ReactElement,
 }
 
 const BaseLayout = ({ Navigation, Content }: BaseLayoutProps) => (
